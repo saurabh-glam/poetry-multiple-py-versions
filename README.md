@@ -62,7 +62,7 @@
 * `.venv3.10.10/bin/python -m pip install dist/poetry_multiple_py_versions-0.1.0-py2.py3-none-any.whl`
 * `.venv3.10.10/bin/poetry_multiple_py_versions` works ✅
 * maybe because typer tests the package on all [python versions](https://github.com/tiangolo/typer/blob/master/.github/workflows/test.yml#LL14C7-L15C69).
-* now lets update main.py:15 from `def shoot():` to `def shoot() -> str | None:`
+* now lets update main.py:15 from `def shoot():` to `def shoot() -> str | None:` (idea here is to use python3.10.10 syntax which is not in python 3.7.16 - to prove the point that we have to port all of our code from python 3.10.10 to 3.7.16 - not just the typing stuff but other package dependencies, our current algorithms too, and this will break stuff)
 * `poetry build`
 * `.venv3.7.16/bin/python -m pip install dist/poetry_multiple_py_versions-0.1.0-py2.py3-none-any.whl --force-reinstall`
 * `.venv3.7.16/bin/poetry_multiple_py_versions` does not work ❌
