@@ -61,3 +61,4 @@
 * `/home/ubuntu/.pyenv/versions/3.10.10/bin/python -m venv .venv3.10.10`
 * `.venv3.10.10/bin/python -m pip install dist/poetry_multiple_py_versions-0.1.0-py2.py3-none-any.whl`
 * `.venv3.10.10/bin/poetry_multiple_py_versions` works ✅
+* maybe because typer tests the package on all [python versions](https://github.com/tiangolo/typer/blob/master/.github/workflows/test.yml#LL14C7-L15C69).
