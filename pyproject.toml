@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "poetry-multiple-py-versions"
+version = "0.1.0"
+description = ""
+authors = ["Saurabh Chopra <saurabh.chopra@x-chemrx.com>"]
+readme = "README.md"
+
+[tool.poetry.scripts]
+poetry_multiple_py_versions = "poetry_multiple_py_versions.main:app"
+
+[tool.poetry.dependencies]
+python = "=3.7.16"
+typer = {extras = ["all"], version = "^0.7.0"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
