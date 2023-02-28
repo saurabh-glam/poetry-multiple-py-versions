@@ -62,3 +62,17 @@
 * `.venv3.10.10/bin/python -m pip install dist/poetry_multiple_py_versions-0.1.0-py2.py3-none-any.whl`
 * `.venv3.10.10/bin/poetry_multiple_py_versions` works ✅
 * maybe because typer tests the package on all [python versions](https://github.com/tiangolo/typer/blob/master/.github/workflows/test.yml#LL14C7-L15C69).
+* now lets update main.py:15 from `def shoot():` to `def shoot() -> str | None:`
+* `poetry build`
+* `.venv3.7.16/bin/python -m pip install dist/poetry_multiple_py_versions-0.1.0-py2.py3-none-any.whl --force-reinstall`
+* `.venv3.7.16/bin/poetry_multiple_py_versions` does not work ❌
+    ```console
+    $ .venv3.7.16/bin/poetry_multiple_py_versions
+    Traceback (most recent call last):
+    File ".venv3.7.16/bin/poetry_multiple_py_versions", line 5, in <module>
+        from poetry_multiple_py_versions.main import app
+    File "/home/ubuntu/dev/saurabh-glam/poetry-multiple-py-versions/.venv3.7.16/lib/python3.7/site-packages/poetry_multiple_py_versions/main.py", line 15, in <module>
+        def shoot() -> str | None:
+    TypeError: unsupported operand type(s) for |: 'type' and 'NoneType'
+    ubuntu@ip-172-31-17-152:~/dev/saurabh-glam/poetry-multiple-py-versions
+    ```
