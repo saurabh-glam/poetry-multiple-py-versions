@@ -46,3 +46,18 @@
         https://python-poetry.org/docs/dependency-specification/#python-restricted-dependencies,
         https://python-poetry.org/docs/dependency-specification/#using-environment-markers
     ```
+* `poetry build` works 🤷🏻‍♂️
+    ```console
+    $ poetry build
+    Building poetry-multiple-py-versions (0.1.0)
+    - Building sdist
+    - Built poetry_multiple_py_versions-0.1.0.tar.gz
+    - Building wheel
+    - Built poetry_multiple_py_versions-0.1.0-py2.py3-none-any.whl
+    ```
+* `/home/ubuntu/.pyenv/versions/3.7.16/bin/python -m venv .venv3.7.16`
+* `.venv3.7.16/bin/python -m pip install dist/poetry_multiple_py_versions-0.1.0-py2.py3-none-any.whl`
+* `.venv3.7.16/bin/poetry_multiple_py_versions` works ✅
+* `/home/ubuntu/.pyenv/versions/3.10.10/bin/python -m venv .venv3.10.10`
+* `.venv3.10.10/bin/python -m pip install dist/poetry_multiple_py_versions-0.1.0-py2.py3-none-any.whl`
+* `.venv3.10.10/bin/poetry_multiple_py_versions` works ✅
